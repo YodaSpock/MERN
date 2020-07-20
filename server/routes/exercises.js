@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Excerise = require('../models/exercise.model');
+let Exercise = require('../models/exercise.model');
 
 router.route('/').get((req, res) => {
     Exercise.find()
@@ -37,8 +37,9 @@ router.route('/:id').delete((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// TODO - Change this path to something less dumb 
 router.route('/update/:id').post((req, res) => {
-    Excerise.findById(req.params.id)
+    Exercise.findById(req.params.id)
       .then(exercise => {
           exercise.username  = req.body.username;
           exercise.description = req.body.description;
