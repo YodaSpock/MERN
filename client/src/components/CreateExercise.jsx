@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class CreateExercises extends Component{
+export default class CreateExercise extends Component{
     render(){
         return(
             <div>
